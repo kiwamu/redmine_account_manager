@@ -1,0 +1,12 @@
+# Japanese translations for Ruby on Rails
+# by Akira Matsuda (ronnie@dio.jp)
+# AR error messages are basically taken from Ruby-GetText-Package. Thanks to Masao Mutoh.
+
+ja:
+  activerecord:
+    errors:
+      messages:
+        digit_and_alpha: "は半角の英数字のみで入力してください。"
+        complexity: "は大文字小文字の英字と数字を混ぜて入力してください。"
+        too_short: "は%{count}文字以上で入力してください。"
+
