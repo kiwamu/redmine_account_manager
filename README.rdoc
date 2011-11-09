@@ -1,3 +1,20 @@
-= account_manager
+= redmine_account_manager
 
-Description goes here
+Redmine のアカウントポリシーを強化するためのプラグインです。
+
+== 既存のアカウントポリシー
+* パスワードは4桁以上 (デフォルト)
+* 桁数は設定画面から任意に変更可能
+* 利用可能な文字の制限なし
+** 極限すれば、平仮名や漢字でもパスワードになります
+
+== 強化されたアカウントポリシー
+* パスワードに利用可能な文字を英数字のみに制限
+* パスワードを校正する文字に大文字小文字の英字と数字が最低ひとつずつ含まれる必要あり
+* 一定期間(3ヶ月)、利用のないアカウントのパスワードを強制変更 & メール通知
+
+== 使い方
+* REDMINE_ROOT/vendor/plugins 以下に配置するだけです
+* production モードのみで動きます
+* パスワードの強制変更は以下の sccript/runner を cron 等で定期実行してください
+ ruby script/runner AccountController.password_change_notify
